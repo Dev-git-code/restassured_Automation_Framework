@@ -10,8 +10,10 @@ import restUtils.AssertionKeys;
 
 import java.util.*;
 
-public class AssertionUtils {
+import org.testng.Assert;
 
+public class AssertionUtils {
+ 
     public static void assertExpectedValuesWithJsonPath(Response response, Map<String, Object> expectedValuesMap) {
         List<AssertionKeys> actualValuesMap = new ArrayList<>();
         // Table headers
@@ -74,7 +76,7 @@ public class AssertionUtils {
                     actualValuesMap.add(new AssertionKeys(xmlPath, expectedValuesMap.get(xmlPath), value, "NOT_MATCHED ❌"));
                 }
             }
-            // if jsonpath does not exist in the response
+            // if xml does not exist in the response
             else {
                 allMatched = false;
                 actualValuesMap.add(new AssertionKeys(xmlPath, expectedValuesMap.get(xmlPath), "VALUE_NOT_FOUND", "NOT_MATCHED ❌"));
@@ -91,5 +93,23 @@ public class AssertionUtils {
                 String.valueOf(assertions.getExpectedValue()), String.valueOf(assertions.getActualValue()), assertions.getResult()})
                 .toArray(String[][] :: new);
         Setup.extentTest.get().info(MarkupHelper.createTable(finalAssertionsMap));
+    }
+    
+    public static void AssertThat(String expected, String actual, String log) {
+    	Assert.assertEquals(expected, actual);
+    	if(expected.equals(actual)) {
+    		ExtentReportManager.logPassDetails(log);
+	    }else {
+	    	ExtentReportManager.logFailureDetails("assertion failed: Expected: "+ expected + " Found: "+actual);
+	    }
+    }
+    
+    public static void AssertThat(int expected, int actual, String log) {
+    	Assert.assertEquals(expected, actual);
+    	if(expected==actual) {
+    		ExtentReportManager.logPassDetails(log);
+	    }else {
+	    	ExtentReportManager.logFailureDetails("assertion failed: Expected: "+ expected + " Found: "+actual);
+	    }
     }
 }

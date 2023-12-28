@@ -19,7 +19,7 @@ public class Setup implements ITestListener {
         String fileName = ExtentReportManager.getReportNameWithTimeStamp();
         String fullReportPath = System.getProperty("user.dir") + "\\reports\\" + fileName;
         extentReports = ExtentReportManager.createInstance(fullReportPath, "Test API Automation Report", "Test ExecutionReport");
-    }
+    } 
 
     public void onFinish(ITestContext context) {
         if (extentReports != null)

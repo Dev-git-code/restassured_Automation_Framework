@@ -23,7 +23,7 @@ public class XLUtility {
 	public XSSFRow row;
 	public XSSFCell cell;
 	public CellStyle style;   
-	String path;
+	String path; 
 	
 	public XLUtility(String path)
 	{

@@ -24,7 +24,7 @@ public class ExtentReportManager {
         extentSparkReporter.config().setReportName(reportName);
         extentSparkReporter.config().setDocumentTitle(documentTitle);
         extentSparkReporter.config().setTheme(Theme.DARK);
-        extentSparkReporter.config().setEncoding("utf-8");
+        extentSparkReporter.config().setEncoding("utf-8"); 
         extentReports = new ExtentReports();
         extentReports.attachReporter(extentSparkReporter);
         return extentReports;
@@ -55,6 +55,9 @@ public class ExtentReportManager {
     }
     public static void logJson(String json) {
         Setup.extentTest.get().info(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
+    }
+    public static void logXml(String xml) {
+        Setup.extentTest.get().info(MarkupHelper.createCodeBlock(xml, CodeLanguage.XML));
     }
     public static void logHeaders(List<Header> headersList) {
 
