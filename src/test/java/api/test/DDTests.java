@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import api.endpoints.Routes;
 import api.endpoints.UserEndPoints;
 import api.payload.User;
-import api.payload.UserObject;
+
 import api.utilities.DataProviders;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -43,7 +43,7 @@ public class DDTests {
 	@Test(priority=1, dataProvider="Data", dataProviderClass=DataProviders.class )
 	public void testPostuser(String userID, String userName,String fname,String lname,String useremail,String pwd,String ph) throws JsonProcessingException 
 	{
-		UserObject userPayload=new UserObject();
+		User userPayload=new User();
 		
 		userPayload.setId(Integer.parseInt(userID)); 
 		userPayload.setUsername(userName);
@@ -53,47 +53,77 @@ public class DDTests {
 		userPayload.setPassword(pwd);
 		userPayload.setPhone(ph);
 		
+		//Response response = RestUtils.performJsonPost(Routes.post_url, userPayload, new HashMap<>());
+		  Response response = RestUtils.performXmlPost(Routes.post_url, userPayload, new HashMap<>());
 		
-		RestUtils.performJsonPost(Routes.post_url, userPayload, new HashMap<>());
-		//RestUtils.performXmlPost(Routes.post_url, userPayload, new HashMap<>());
+//		Map<String,String> expectedHeader = new HashMap<>(); 
+//        expectedHeader.put("Content-Type", "application/json");
+//        expectedHeader.put("Transfer-Encoding", "chunked");
+//        expectedHeader.put("Server", "Jetty(9.2.9.v20150224)");
 		
+        Map<String,String> expectedHeader = new HashMap<>(); 
+        expectedHeader.put("Content-Type", "application/xml");
+        expectedHeader.put("Content-Length", response.header("Content-Length"));
+        expectedHeader.put("Server", "Jetty(9.2.9.v20150224)");
+        
+	            
+		
+		AssertionUtils.AssertExpectedHeaders(response, expectedHeader);
+	
 			
 	}
 	
 	@Test(priority=2, dataProvider="Data", dataProviderClass=DataProviders.class)
 	public void testGetUserByName(String userID,String userName,String fname,String lname,String useremail,String pwd,String ph)
 	{
-			 //Response response=UserEndPoints.readXmlUser(userName);
-			 Response response=UserEndPoints.readJsonUser(userName);
+			 Response response=UserEndPoints.readXmlUser(userName);
+			 //Response response=UserEndPoints.readJsonUser(userName);
+			 //Response response= RestUtils.performJsonGet(Routes.get_url,"username",userName);
 			 Map<String,Object> expectedValueMap = new HashMap<>();
 			 
-//	            expectedValueMap.put("User.username",userName);
-//	            expectedValueMap.put("User.firstName",fname);
-//	            expectedValueMap.put("User.lastName",lname);
-//	            expectedValueMap.put("User.email",useremail);
-//	            expectedValueMap.put("User.password",pwd);
-//	            expectedValueMap.put("User.phone",ph);   
+            expectedValueMap.put("User.username",userName);
+            expectedValueMap.put("User.firstName",fname);
+            expectedValueMap.put("User.lastName",lname);
+            expectedValueMap.put("User.email",useremail);
+            expectedValueMap.put("User.password",pwd);
+            expectedValueMap.put("User.phone",ph);   
 	            
-	            expectedValueMap.put("username",userName);
-	            expectedValueMap.put("firstName",fname);
-	            expectedValueMap.put("lastName",lname);
-	            expectedValueMap.put("email",useremail);
-	            expectedValueMap.put("password",pwd);
-	            expectedValueMap.put("phone",ph);   
-	            
-	        //AssertionUtils.assertExpectedValuesWithXmlPath(response, expectedValueMap);
-	        //RestUtils.printXmlResponseLogInReport(response);
+//	            expectedValueMap.put("username",userName);
+//	            expectedValueMap.put("firstName",fname);
+//	            expectedValueMap.put("lastName",lname);
+//	            expectedValueMap.put("email",useremail);
+//	            expectedValueMap.put("password",pwd);
+//	            expectedValueMap.put("phone",ph);   
+//	            
+	        
+	       
+//	        Map<String,String> expected = new HashMap<>(); 
+//	        expected.put("Content-Type", "application/json");
+//	        expected.put("Transfer-Encoding", "chunked");
+//	        expected.put("Server", "Jetty(9.2.9.v20150224)");
+	        
+	        Map<String,String> expected = new HashMap<>(); 
+	        expected.put("Content-Type", "application/xml");
+	        expected.put("Content-Length", response.header("Content-Length"));
+	        expected.put("Server", "Jetty(9.2.9.v20150224)");
+	        
+	        
 	        AssertionUtils.assertExpectedValuesWithJsonPath(response, expectedValueMap);
-	        RestUtils.printJsonResponseLogInReport(response);
+	        AssertionUtils.assertExpectedValuesWithXmlPath(response, expectedValueMap);
+	        AssertionUtils.AssertExpectedHeaders(response, expected);
+	        //RestUtils.printJsonResponseLogInReport(response);
+	        RestUtils.printXmlResponseLogInReport(response);
+	        
 	        
 	}
 	
 	@Test(priority=3, dataProvider="UserNames", dataProviderClass=DataProviders.class)
 	public void testDeleteUserByName(String userName)
 	{ 
-			//Response response=UserEndPoints.deleteXmlUser(userName);
-			Response response=UserEndPoints.deleteJsonUser(userName);
-			RestUtils.printJsonResponseLogInReport(response);	
+			Response response=UserEndPoints.deleteXmlUser(userName);
+			//Response response=UserEndPoints.deleteJsonUser(userName);
+			RestUtils.printXmlResponseLogInReport(response);
+			//RestUtils.printJsonResponseLogInReport(response);	
 			AssertionUtils.AssertThat(200, response.getStatusCode(), "correct status code");
 				
 	

@@ -1,7 +1,12 @@
 package api.payload;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@JacksonXmlRootElement(localName = "User")
 public class User {
 
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	int id;
 	String username;
 	String firstName;
