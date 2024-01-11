@@ -2,291 +2,132 @@
 <testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-29T10:57:50 IST" name="PetSuite" finished-at="2023-12-29T10:58:40 IST" duration-ms="49356">
+  <suite started-at="2024-01-11T15:03:08 IST" name="JobifySuite" finished-at="2024-01-11T15:03:25 IST" duration-ms="16732">
     <groups>
     </groups>
-    <test started-at="2023-12-29T10:57:50 IST" name="PetTests" finished-at="2023-12-29T10:58:40 IST" duration-ms="49356">
-      <class name="api.test.DDTests">
-        <test-method signature="testPostuser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:57:53 IST" name="testPostuser" data-provider="Data" finished-at="2023-12-29T10:57:57 IST" duration-ms="4448" status="PASS">
+    <test started-at="2024-01-11T15:03:08 IST" name="JobifyTests" finished-at="2024-01-11T15:03:25 IST" duration-ms="16732">
+      <class name="api.test.JobifyTests">
+        <test-method signature="testRegisterUser(java.lang.reflect.Method,java.util.Map)[pri:1, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:09 IST" name="testRegisterUser" data-provider="getData" finished-at="2024-01-11T15:03:13 IST" duration-ms="3944" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1010]]>
+                <![CDATA[public void api.test.JobifyTests.testRegisterUser(java.lang.reflect.Method,java.util.Map) throws com.fasterxml.jackson.core.JsonProcessingException]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[testuser1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[John]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Canedy]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[a@gmail.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test@1]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1234567897]]>
+                <![CDATA[{password=secret, email=test1@gmail.com, name=testuser}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostuser -->
-        <test-method signature="testPostuser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:57:57 IST" name="testPostuser" data-provider="Data" finished-at="2023-12-29T10:58:02 IST" duration-ms="4786" status="PASS">
+        </test-method> <!-- testRegisterUser -->
+        <test-method signature="testLoginUser(java.lang.reflect.Method,java.util.Map)[pri:2, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:13 IST" name="testLoginUser" data-provider="getData" finished-at="2024-01-11T15:03:15 IST" duration-ms="2239" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1020]]>
+                <![CDATA[public void api.test.JobifyTests.testLoginUser(java.lang.reflect.Method,java.util.Map) throws com.fasterxml.jackson.core.JsonProcessingException]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[testuser2]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Kim]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Kom]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[b@gmail.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test@2]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1234567897]]>
+                <![CDATA[{password=secret, email=test1@gmail.com, name=testuser}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostuser -->
-        <test-method signature="testPostuser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:58:02 IST" name="testPostuser" data-provider="Data" finished-at="2023-12-29T10:58:12 IST" duration-ms="10390" status="PASS">
+        </test-method> <!-- testLoginUser -->
+        <test-method signature="testCreateJob(java.lang.reflect.Method,java.util.Map)[pri:3, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:15 IST" name="testCreateJob" data-provider="getData" finished-at="2024-01-11T15:03:17 IST" duration-ms="1180" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1030]]>
+                <![CDATA[public void api.test.JobifyTests.testCreateJob(java.lang.reflect.Method,java.util.Map)]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[testuser3]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Smith]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Steve]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[c@gmail.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test@3]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1234567897]]>
+                <![CDATA[{position=SDE1, status=pending, company=Accops}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostuser -->
-        <test-method signature="testGetUserByName(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:58:13 IST" name="testGetUserByName" data-provider="Data" finished-at="2023-12-29T10:58:22 IST" duration-ms="9109" status="PASS">
+        </test-method> <!-- testCreateJob -->
+        <test-method signature="testCreateJob(java.lang.reflect.Method,java.util.Map)[pri:3, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:17 IST" name="testCreateJob" data-provider="getData" finished-at="2024-01-11T15:03:18 IST" duration-ms="1592" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1010]]>
+                <![CDATA[public void api.test.JobifyTests.testCreateJob(java.lang.reflect.Method,java.util.Map)]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[testuser1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[John]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Canedy]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[a@gmail.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test@1]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1234567897]]>
+                <![CDATA[{position=SDE1, status=pending, company=Amazon}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetUserByName -->
-        <test-method signature="testGetUserByName(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:58:22 IST" name="testGetUserByName" data-provider="Data" finished-at="2023-12-29T10:58:25 IST" duration-ms="2863" status="PASS">
+        </test-method> <!-- testCreateJob -->
+        <test-method signature="testGetSingleJob()[pri:4, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:18 IST" name="testGetSingleJob" finished-at="2024-01-11T15:03:20 IST" duration-ms="1538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetSingleJob -->
+        <test-method signature="testgetAllJobs(java.lang.reflect.Method,java.util.Map)[pri:5, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:20 IST" name="testgetAllJobs" data-provider="getData" finished-at="2024-01-11T15:03:21 IST" duration-ms="1274" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1020]]>
+                <![CDATA[public void api.test.JobifyTests.testgetAllJobs(java.lang.reflect.Method,java.util.Map)]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[testuser2]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Kim]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Kom]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[b@gmail.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test@2]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1234567897]]>
+                <![CDATA[{jobs[0].status=pending, jobs[0].position=SDE1, jobs[1].status=pending, jobs[0].company=Accops, jobs[1].company=Amazon, jobs[1].position=SDE1}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetUserByName -->
-        <test-method signature="testGetUserByName(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:58:25 IST" name="testGetUserByName" data-provider="Data" finished-at="2023-12-29T10:58:27 IST" duration-ms="2462" status="PASS">
+        </test-method> <!-- testgetAllJobs -->
+        <test-method signature="testUpdateJob(java.lang.reflect.Method,java.util.Map)[pri:6, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:21 IST" name="testUpdateJob" data-provider="getData" finished-at="2024-01-11T15:03:22 IST" duration-ms="1335" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1030]]>
+                <![CDATA[public void api.test.JobifyTests.testUpdateJob(java.lang.reflect.Method,java.util.Map)]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[testuser3]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Smith]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Steve]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[c@gmail.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test@3]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1234567897]]>
+                <![CDATA[{position=Data Scientist, status=declined, company=Meta}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetUserByName -->
-        <test-method signature="testDeleteUserByName(java.lang.String)[pri:3, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:58:27 IST" name="testDeleteUserByName" data-provider="UserNames" finished-at="2023-12-29T10:58:32 IST" duration-ms="4422" status="PASS">
+        </test-method> <!-- testUpdateJob -->
+        <test-method signature="testDeleteJob()[pri:7, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:22 IST" name="testDeleteJob" finished-at="2024-01-11T15:03:24 IST" duration-ms="1110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteJob -->
+        <test-method signature="testDeleteUser(java.lang.reflect.Method,java.util.Map)[pri:8, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:24 IST" name="testDeleteUser" data-provider="getData" finished-at="2024-01-11T15:03:25 IST" duration-ms="1415" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[testuser1]]>
+                <![CDATA[public void api.test.JobifyTests.testDeleteUser(java.lang.reflect.Method,java.util.Map) throws com.fasterxml.jackson.core.JsonProcessingException]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteUserByName -->
-        <test-method signature="testDeleteUserByName(java.lang.String)[pri:3, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:58:32 IST" name="testDeleteUserByName" data-provider="UserNames" finished-at="2023-12-29T10:58:34 IST" duration-ms="2482" status="PASS">
-          <params>
-            <param index="0">
+            <param index="1">
               <value>
-                <![CDATA[testuser2]]>
+                <![CDATA[{email=test1@gmail.com, name=testuser}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDeleteUserByName -->
-        <test-method signature="testDeleteUserByName(java.lang.String)[pri:3, instance:api.test.DDTests@741a8937]" started-at="2023-12-29T10:58:34 IST" name="testDeleteUserByName" data-provider="UserNames" finished-at="2023-12-29T10:58:40 IST" duration-ms="5810" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteUserByName -->
-      </class> <!-- api.test.DDTests -->
-    </test> <!-- PetTests -->
-  </suite> <!-- PetSuite -->
+        </test-method> <!-- testDeleteUser -->
+      </class> <!-- api.test.JobifyTests -->
+    </test> <!-- JobifyTests -->
+  </suite> <!-- JobifySuite -->
 </testng-results>

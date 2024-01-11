@@ -1,6 +1,8 @@
 package api.utilities;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
 
 import org.testng.annotations.DataProvider;
 
@@ -48,4 +50,12 @@ public class DataProviders {
 		return apidata;
 	}
 	
+    @DataProvider(name = "getData")
+    public Object[][] getApplicationData(Method method) {
+        // Your existing implementation to get application data
+    	ExcelUtil excel = new ExcelUtil();
+        return excel.getTestData(method.getName(), "BAT_DATA");
+    }
 }
+
+

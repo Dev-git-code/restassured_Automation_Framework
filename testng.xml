@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="PetSuite">
+<suite name="JobifySuite">
   
   <listeners>
   		<listener  class-name="reporting.Setup" />
    </listeners>
   
-  <test thread-count="5" name="PetTests">
+  <test thread-count="5" name="JobifyTests">
     <classes>
       <!-- <class name="api.test.UserTests"/> -->
        <!--<class name="api.test.UserTests2"/> -->
-     <class name="api.test.DDTests"/>
+     <class name="api.test.JobifyTests"/>
     </classes>
   </test> <!-- PetTests -->
 </suite> <!-- PetSuite -->

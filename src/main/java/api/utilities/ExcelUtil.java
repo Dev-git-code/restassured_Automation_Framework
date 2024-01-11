@@ -30,7 +30,8 @@ public class ExcelUtil {
 			 * if (TestProperties.get("jenkins.runmode").equals("true")) { path =
 			 * PathUtil.getConfDirPath() + File.separator + "HYS_TestData.xlsx"; } else {
 			 */
-			path = TestProperties.get("excel.file.path");
+			//path = TestProperties.get("excel.file.path");
+			path=System.getProperty("user.dir")+"//testData//HyWorksData.xlsx";
 			// path = PathUtil.getConfDirPath() + File.separator + "HYS_TestData.xlsx";
 			// }
 			fis = new FileInputStream(path);
@@ -77,7 +78,7 @@ public class ExcelUtil {
 			int index = workbook.getSheetIndex(sheetName);
 			int col_Num = -1;
 			if (index == -1) {
-				return "";
+				return ""; 
 			}
 
 			sheet = workbook.getSheetAt(index);

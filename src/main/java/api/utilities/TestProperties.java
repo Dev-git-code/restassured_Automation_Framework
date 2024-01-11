@@ -12,7 +12,7 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 
-import hyworks.automation.framework.base.AutomationException;
+
 
 public class TestProperties {
 
@@ -59,17 +59,13 @@ public class TestProperties {
 		}
 	}
 
-	public static String get(String key) throws AutomationException {
+	public static String get(String key) {
 		String value = (String) properties.get(key);
-		if (value == null) {
-			throw new AutomationException("key " + key
-					+ " does not exits in properties files");
-		}
 		return value;
 	}
 
 	public static void modify(String key, String newValue)
-			throws AutomationException, IOException {
+			throws IOException {
 
 		FileOutputStream fout = new FileOutputStream(PathUtil.getConfDirPath()
 				+ File.separator + "setup.properties");
@@ -124,19 +120,10 @@ public class TestProperties {
 		return true;
 	}
 
-	public static int getInt(String key) throws AutomationException {
+	public static int getInt(String key) {
 		int valueInt = 0;
 		String value = (String) properties.get(key);
-		if (value == null) {
-			throw new AutomationException("key " + key
-					+ " does not exits in properties files");
-		}
-		try {
 			valueInt = Integer.parseInt(value);
-		} catch (NumberFormatException e) {
-			throw new AutomationException("key " + key
-					+ " does not exits in properties files in Integer format");
-		}
 		return valueInt;
 	}
 

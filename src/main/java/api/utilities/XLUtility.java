@@ -4,11 +4,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Hashtable;
 
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -150,4 +155,42 @@ public class XLUtility {
 		fo.close();
 	}
 	
+	
+//	public synchronized Object[][] getTestData(String sheetName) throws IOException {
+//		// String sheetName = "TestData";
+//
+//		
+//
+//		// Calculate total rows of data
+//		int rows = 0;
+//		int dataStartRowNum =1;
+//		
+//		while (!getCellData(sheetName, 0, dataStartRowNum  + rows).equals("")) {
+//			rows++;
+//		}
+//
+//		// Calculate total columns of data
+//		int cols = 0;
+//		int colStartRowNum=1;
+//		while (!getCellData(sheetName, cols, colStartRowNum).equals("")) {
+//			cols++;
+//		}
+//
+//		// Read the data
+//		Object[][] data = new Object[rows][1];
+//		int dataRow = 0;
+//		Hashtable<String, String> table = null;
+//		for (int rNum = dataStartRowNum; rNum < dataStartRowNum + rows; rNum++) {
+//			table = new Hashtable<String, String>();
+//			for (int cNum = 0; cNum < cols; cNum++) {
+//				String key = getCellData(sheetName, cNum, colStartRowNum);
+//				String value = getCellData(sheetName, cNum, rNum);
+//				table.put(key, value);
+//			}
+//			data[dataRow][0] = table;
+//			dataRow++;
+//		}
+//		return data;
+//	}
+//	
 }

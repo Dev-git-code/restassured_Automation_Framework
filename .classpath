@@ -39,6 +39,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/lombok.jar"/>
-	<classpathentry kind="lib" path="lib/poi-5.2.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
