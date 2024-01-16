@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-11T15:03:08 IST" name="JobifySuite" finished-at="2024-01-11T15:03:25 IST" duration-ms="16732">
+  <suite started-at="2024-01-16T15:35:03 IST" name="JobifySuite" finished-at="2024-01-16T15:35:15 IST" duration-ms="12628">
     <groups>
     </groups>
-    <test started-at="2024-01-11T15:03:08 IST" name="JobifyTests" finished-at="2024-01-11T15:03:25 IST" duration-ms="16732">
+    <test started-at="2024-01-16T15:35:03 IST" name="JobifyTests" finished-at="2024-01-16T15:35:15 IST" duration-ms="12628">
       <class name="api.test.JobifyTests">
-        <test-method signature="testRegisterUser(java.lang.reflect.Method,java.util.Map)[pri:1, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:09 IST" name="testRegisterUser" data-provider="getData" finished-at="2024-01-11T15:03:13 IST" duration-ms="3944" status="PASS">
+        <test-method signature="testRegisterUser(java.lang.reflect.Method,java.util.Map)[pri:1, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:04 IST" name="testRegisterUser" data-provider="getData" finished-at="2024-01-16T15:35:07 IST" duration-ms="3290" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegisterUser -->
-        <test-method signature="testLoginUser(java.lang.reflect.Method,java.util.Map)[pri:2, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:13 IST" name="testLoginUser" data-provider="getData" finished-at="2024-01-11T15:03:15 IST" duration-ms="2239" status="PASS">
+        <test-method signature="testLoginUser(java.lang.reflect.Method,java.util.Map)[pri:2, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:07 IST" name="testLoginUser" data-provider="getData" finished-at="2024-01-16T15:35:09 IST" duration-ms="1716" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,7 +39,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginUser -->
-        <test-method signature="testCreateJob(java.lang.reflect.Method,java.util.Map)[pri:3, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:15 IST" name="testCreateJob" data-provider="getData" finished-at="2024-01-11T15:03:17 IST" duration-ms="1180" status="PASS">
+        <test-method signature="testCreateJob(java.lang.reflect.Method,java.util.Map)[pri:3, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:09 IST" name="testCreateJob" data-provider="getData" finished-at="2024-01-16T15:35:10 IST" duration-ms="1079" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,7 +55,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateJob -->
-        <test-method signature="testCreateJob(java.lang.reflect.Method,java.util.Map)[pri:3, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:17 IST" name="testCreateJob" data-provider="getData" finished-at="2024-01-11T15:03:18 IST" duration-ms="1592" status="PASS">
+        <test-method signature="testCreateJob(java.lang.reflect.Method,java.util.Map)[pri:3, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:10 IST" name="testCreateJob" data-provider="getData" finished-at="2024-01-16T15:35:11 IST" duration-ms="1074" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -71,11 +71,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateJob -->
-        <test-method signature="testGetSingleJob()[pri:4, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:18 IST" name="testGetSingleJob" finished-at="2024-01-11T15:03:20 IST" duration-ms="1538" status="PASS">
+        <test-method signature="testGetSingleJob()[pri:4, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:11 IST" name="testGetSingleJob" finished-at="2024-01-16T15:35:12 IST" duration-ms="627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetSingleJob -->
-        <test-method signature="testgetAllJobs(java.lang.reflect.Method,java.util.Map)[pri:5, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:20 IST" name="testgetAllJobs" data-provider="getData" finished-at="2024-01-11T15:03:21 IST" duration-ms="1274" status="PASS">
+        <test-method signature="testgetAllJobs(java.lang.reflect.Method,java.util.Map)[pri:5, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:12 IST" name="testgetAllJobs" data-provider="getData" finished-at="2024-01-16T15:35:12 IST" duration-ms="694" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -91,7 +91,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testgetAllJobs -->
-        <test-method signature="testUpdateJob(java.lang.reflect.Method,java.util.Map)[pri:6, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:21 IST" name="testUpdateJob" data-provider="getData" finished-at="2024-01-11T15:03:22 IST" duration-ms="1335" status="PASS">
+        <test-method signature="testUpdateJob(java.lang.reflect.Method,java.util.Map)[pri:6, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:12 IST" name="testUpdateJob" data-provider="getData" finished-at="2024-01-16T15:35:14 IST" duration-ms="1242" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -107,11 +107,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpdateJob -->
-        <test-method signature="testDeleteJob()[pri:7, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:22 IST" name="testDeleteJob" finished-at="2024-01-11T15:03:24 IST" duration-ms="1110" status="PASS">
+        <test-method signature="testDeleteJob()[pri:7, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:14 IST" name="testDeleteJob" finished-at="2024-01-16T15:35:15 IST" duration-ms="1048" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteJob -->
-        <test-method signature="testDeleteUser(java.lang.reflect.Method,java.util.Map)[pri:8, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-11T15:03:24 IST" name="testDeleteUser" data-provider="getData" finished-at="2024-01-11T15:03:25 IST" duration-ms="1415" status="PASS">
+        <test-method signature="testDeleteUser(java.lang.reflect.Method,java.util.Map)[pri:8, instance:api.test.JobifyTests@e15b7e8]" started-at="2024-01-16T15:35:15 IST" name="testDeleteUser" data-provider="getData" finished-at="2024-01-16T15:35:15 IST" duration-ms="586" status="PASS">
           <params>
             <param index="0">
               <value>

@@ -36,6 +36,30 @@ public class RestUtils {
     }
     
     /**
+     * Returns a RequestSpecification configured for XML content type.
+     *
+     * @return A RequestSpecification instance configured for XML content type.
+     */
+    private static RequestSpecification getXmlRequestSpecification() {
+        return RestAssured.given()
+                .contentType(ContentType.XML)
+                .accept(ContentType.XML);
+    }
+    
+    /**
+     * Returns a RequestSpecification configured for XML content type with OAuth 2.0 authentication.
+     *
+     * @param accessToken The OAuth 2.0 access token to be used for authentication.
+     * @return A RequestSpecification instance configured for XML content type with OAuth 2.0 authentication.
+     */
+    private static RequestSpecification getXmlRequestSpecificationWithOauth2(String accessToken) {
+        return RestAssured.given()
+                .contentType(ContentType.XML)
+                .accept(ContentType.XML)
+                .auth().oauth2(accessToken);
+    }
+    
+    /**
      * Returns a RequestSpecification for a JSON request with the specified endpoint, request payload,
      * and headers. Sets up the request with base URI, headers, content type, and body for JSON.
      * @param endPoint The API endpoint for the request.
@@ -63,13 +87,30 @@ public class RestUtils {
                 .accept(ContentType.JSON);
     }
     
+    
+    private static RequestSpecification getJsonRequestSpecification(String pathParam, Object pathParamValue) {
+        return RestAssured.given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .pathParam(pathParam,pathParamValue);
+    }
+    
+    private static RequestSpecification getJsonRequestSpecificationWithOauth2(String pathParam, Object pathParamValue, String accessToken) {
+        return RestAssured.given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .pathParam(pathParam,pathParamValue)
+                .auth().oauth2(accessToken);
+    }
+    
+    
     /**
      * Returns a RequestSpecification configured for JSON content type with OAuth 2.0 authentication.
      *
      * @param accessToken The OAuth 2.0 access token to be used for authentication.
      * @return A RequestSpecification instance configured for JSON content type with OAuth 2.0 authentication.
      */
-    private static RequestSpecification getJsonRequestSpecificationOauth(String accessToken) {
+    private static RequestSpecification getJsonRequestSpecificationWithOauth2(String accessToken) {
         return RestAssured.given()
                 .contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
@@ -79,14 +120,34 @@ public class RestUtils {
     /**
      * Returns a RequestSpecification configured for JSON requests with OAuth 2.0 authentication.
      *
-     * @param accessToken       The OAuth 2.0 access token to be used for authentication.
      * @param requestPayload    The payload to be included in the request body.
+     * @param accessToken       The OAuth 2.0 access token to be used for authentication.
+     * 
      * @return A RequestSpecification object configured for JSON requests with OAuth 2.0 authentication.
      */
-    private static RequestSpecification getJsonRequestSpecificationOauth(String accessToken, Object requestPayload) {
+    private static RequestSpecification getJsonRequestSpecificationWithOauth2(Object requestPayload,String accessToken) {
         return RestAssured.given()
                 .contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
+                .body(requestPayload)
+                .auth().oauth2(accessToken);
+    }
+    
+    /**
+     * Constructs and returns a RequestSpecification with JSON content type and OAuth 2.0 authentication.
+     * This method is specifically designed for making JSON requests with OAuth 2.0 authentication and optional path parameters.
+     *
+     * @param requestPayload  The payload of the request in JSON format.
+     * @param pathParam       The name of the path parameter (can be null if no path parameter is needed).
+     * @param pathParamValue  The value of the path parameter.
+     * @param accessToken     The OAuth 2.0 access token for authentication.
+     * @return A RequestSpecification configured with JSON content type, OAuth 2.0 authentication, and optional path parameters.
+     */
+    private static RequestSpecification getJsonRequestSpecificationWithOauth2(Object requestPayload,String pathParam,Object pathParamValue,String accessToken) {
+        return RestAssured.given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .pathParam(pathParam, pathParamValue)
                 .body(requestPayload)
                 .auth().oauth2(accessToken);
     }
@@ -105,6 +166,7 @@ public class RestUtils {
         ExtentReportManager.logInfoDetails("Request body is ");
         ExtentReportManager.logJson(queryableRequestSpecification.getBody());
     }
+    
     
     /**
      * Logs the details of an XML request in the Extent report, including endpoint, method, headers,
@@ -202,8 +264,8 @@ public class RestUtils {
      * @param accessToken      The OAuth 2.0 access token to be used for authentication.
      * @return A Response object representing the server's response to the POST request.
      */
-    public static Response performJsonPostWithOauth2(String endPoint, Map<String, Object> requestPayload, String accessToken) {
-    	RequestSpecification requestSpecification = getJsonRequestSpecificationOauth(accessToken,requestPayload);
+    public static Response performJsonPost(String endPoint, Map<String, Object> requestPayload, String accessToken) {
+    	RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(requestPayload,accessToken);
     	Response response =  requestSpecification.when().post(endPoint);
     	printJsonRequestLogInReport(requestSpecification);
     	printJsonResponseLogInReport(response);
@@ -218,8 +280,10 @@ public class RestUtils {
 	 * @return The Response object for the GET request.
 	 */
     public static Response performJsonGet(String endPoint, String pathParam, Object pathParamValue) {  
-        RequestSpecification requestSpecification = getJsonRequestSpecification();
-        Response response =  requestSpecification.pathParam(pathParam,pathParamValue).when().get(endPoint);
+        RequestSpecification requestSpecification = getJsonRequestSpecification(pathParam,pathParamValue);
+        Response response =  requestSpecification.when().get(endPoint);
+        printJsonRequestLogInReport(requestSpecification);
+        printJsonResponseLogInReport(response);
  		return response;
      }
     
@@ -232,11 +296,13 @@ public class RestUtils {
      * @param accessToken The OAuth 2.0 access token for authentication.
      * @return A Response object containing the result of the GET request.
      */
-    public static Response performJsonGetWithOauth2(String endPoint, String pathParam, Object pathParamValue, String accessToken) {
+    public static Response performJsonGet(String endPoint, String pathParam, Object pathParamValue, String accessToken) {
         
-       RequestSpecification requestSpecification = getJsonRequestSpecificationOauth(accessToken);
-       Response response =  requestSpecification.pathParam(pathParam,pathParamValue).when().get(endPoint);
-		return response;
+       RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(pathParam,pathParamValue,accessToken);
+       Response response =  requestSpecification.when().get(endPoint);
+       printJsonRequestLogInReport(requestSpecification);
+       printJsonResponseLogInReport(response);
+	   return response;
     }
     
     /**
@@ -246,10 +312,12 @@ public class RestUtils {
      * @param accessToken The OAuth 2.0 access token for authentication.
      * @return A Response object containing the result of the GET request.
      */
-    public static Response performJsonGetWithOauth2(String endPoint,String accessToken) {
+    public static Response performJsonGet(String endPoint,String accessToken) {
       
-     RequestSpecification requestSpecification = getJsonRequestSpecificationOauth(accessToken);
+     RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(accessToken);
      Response response =  requestSpecification.when().get(endPoint);
+     printJsonRequestLogInReport(requestSpecification);
+     printJsonResponseLogInReport(response);
 	 return response;
     }   
     
@@ -271,37 +339,75 @@ public class RestUtils {
     }
     
     /**
-     * Performs a JSON DELETE request.
+     * Performs a JSON DELETE request to the specified endpoint with optional path parameters.
      *
-     * @param endPoint The endpoint URL for the DELETE request.
-     * @param pathParam The path parameter name.
+     * @param endPoint       The API endpoint to send the DELETE request to.
+     * @param pathParam      The path parameter name (can be null if no path parameter is needed).
      * @param pathParamValue The value of the path parameter.
-     * @return A Response object containing the result of the DELETE request.
+     * @return A Response object containing the server's response to the DELETE request.
      */
 	public static Response performJsonDelete(String endPoint, String pathParam, Object pathParamValue) {
-		 Response response=given()
-					.contentType(ContentType.JSON)
-					.accept(ContentType.JSON)
-					.pathParam(pathParam,pathParamValue)
-					.when()
-						.delete(endPoint);	
-			return response;
+		 RequestSpecification requestSpecification = getJsonRequestSpecification(pathParam,pathParamValue);
+	       Response response =  requestSpecification.when().delete(endPoint);
+	       printJsonRequestLogInReport(requestSpecification);
+	       printJsonResponseLogInReport(response);
+		   return response;
 	}
-
-	public static Response performJsonPatchWithOauth2(String endPoint, Map<String, Object> requestPayload, String pathParam, Object pathParamValue, String accessToken) {
-		RequestSpecification requestSpecification = getJsonRequestSpecificationOauth(accessToken,requestPayload);
-    	Response response =  requestSpecification.pathParam(pathParam,pathParamValue).when().patch(endPoint);
+	
+	/**
+	 * Performs a JSON DELETE request to the specified endpoint with optional path parameters
+	 * and includes OAuth 2.0 authentication using the provided access token.
+	 *
+	 * @param endPoint       The API endpoint to send the DELETE request to.
+	 * @param pathParam      The path parameter name (can be null if no path parameter is needed).
+	 * @param pathParamValue The value of the path parameter.
+	 * @param accessToken    The OAuth 2.0 access token for authentication.
+	 * @return A Response object containing the server's response to the DELETE request.
+	 */
+	public static Response performJsonDelete(String endPoint, String pathParam, Object pathParamValue, String accessToken) {
+		 RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(pathParam,pathParamValue,accessToken);
+         Response response =  requestSpecification.when().delete(endPoint);
+         printJsonRequestLogInReport(requestSpecification);
+         printJsonResponseLogInReport(response);
+	     return response;
+	}
+	
+	/**
+	 * Performs a JSON Patch operation using OAuth2 authentication.
+	 *
+	 * @param endPoint        The API endpoint URL for the PATCH request.
+	 * @param requestPayload  The JSON payload to be included in the request body.
+	 * @param pathParam       The name of the path parameter in the endpoint URL.
+	 * @param pathParamValue  The value of the path parameter.
+	 * @param accessToken     The OAuth2 access token for authentication.
+	 * @return                The response object containing the result of the PATCH request.
+	 */
+	public static Response performJsonPatch(String endPoint, Map<String, Object> requestPayload, String pathParam, Object pathParamValue, String accessToken) {
+		RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(requestPayload,pathParam,pathParamValue,accessToken);
+    	Response response =  requestSpecification.when().patch(endPoint);
     	printJsonRequestLogInReport(requestSpecification);
     	printJsonResponseLogInReport(response);
     	return response;
 	}    
 	
-	public static Response performJsonPutWithOauth2(String endPoint, Map<String, Object> requestPayload, String pathParam, Object pathParamValue, String accessToken) {
-		RequestSpecification requestSpecification = getJsonRequestSpecificationOauth(accessToken,requestPayload);
+	/**
+	 * Performs a JSON PUT operation using OAuth2 authentication.
+	 *
+	 * @param endPoint        The API endpoint URL for the PUT request.
+	 * @param requestPayload  The JSON payload to be included in the request body.
+	 * @param pathParam       The name of the path parameter in the endpoint URL.
+	 * @param pathParamValue  The value of the path parameter.
+	 * @param accessToken     The OAuth2 access token for authentication.
+	 * @return                The response object containing the result of the PUT request.
+	 */
+	public static Response performJsonPut(String endPoint, Map<String, Object> requestPayload, String pathParam, Object pathParamValue, String accessToken) {
+		RequestSpecification requestSpecification = getJsonRequestSpecification(accessToken,requestPayload);
     	Response response =  requestSpecification.pathParam(pathParam,pathParamValue).when().put(endPoint);
     	printJsonRequestLogInReport(requestSpecification);
     	printJsonResponseLogInReport(response);
     	return response;
-	}    
+	}
+
+	    
     
 }
