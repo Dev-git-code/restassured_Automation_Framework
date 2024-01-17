@@ -282,7 +282,6 @@ public class RestUtils {
     public static Response performJsonGet(String endPoint, String pathParam, Object pathParamValue) {  
         RequestSpecification requestSpecification = getJsonRequestSpecification(pathParam,pathParamValue);
         Response response =  requestSpecification.when().get(endPoint);
-        printJsonRequestLogInReport(requestSpecification);
         printJsonResponseLogInReport(response);
  		return response;
      }
@@ -300,7 +299,6 @@ public class RestUtils {
         
        RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(pathParam,pathParamValue,accessToken);
        Response response =  requestSpecification.when().get(endPoint);
-       printJsonRequestLogInReport(requestSpecification);
        printJsonResponseLogInReport(response);
 	   return response;
     }
@@ -316,7 +314,6 @@ public class RestUtils {
       
      RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(accessToken);
      Response response =  requestSpecification.when().get(endPoint);
-     printJsonRequestLogInReport(requestSpecification);
      printJsonResponseLogInReport(response);
 	 return response;
     }   
@@ -349,7 +346,6 @@ public class RestUtils {
 	public static Response performJsonDelete(String endPoint, String pathParam, Object pathParamValue) {
 		 RequestSpecification requestSpecification = getJsonRequestSpecification(pathParam,pathParamValue);
 	       Response response =  requestSpecification.when().delete(endPoint);
-	       printJsonRequestLogInReport(requestSpecification);
 	       printJsonResponseLogInReport(response);
 		   return response;
 	}
@@ -367,7 +363,6 @@ public class RestUtils {
 	public static Response performJsonDelete(String endPoint, String pathParam, Object pathParamValue, String accessToken) {
 		 RequestSpecification requestSpecification = getJsonRequestSpecificationWithOauth2(pathParam,pathParamValue,accessToken);
          Response response =  requestSpecification.when().delete(endPoint);
-         printJsonRequestLogInReport(requestSpecification);
          printJsonResponseLogInReport(response);
 	     return response;
 	}

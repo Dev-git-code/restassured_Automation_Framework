@@ -57,7 +57,6 @@ public class JobifyTests {
 	String id;
 	@Test(priority=1, dataProvider= "getData",dataProviderClass = DataProviders.class)
 	public void testRegisterUser(Method method,Map<String,Object> userPayload) throws JsonProcessingException {
-		
 		Response response = RestUtils.performJsonPost(JobifyRoutes.registerUrl, userPayload, new HashMap<>());		
 	}
 	
