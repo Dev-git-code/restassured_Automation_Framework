@@ -5,7 +5,7 @@
     <classes>
       <class name="api.test.JobifyTests">
         <methods>
-          <include name="getRoutes"/>
+          <include name="testUpdateJob"/>
         </methods>
       </class> <!-- api.test.JobifyTests -->
     </classes>

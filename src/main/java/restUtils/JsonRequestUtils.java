@@ -8,20 +8,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class JsonRequestUtils {
-	/**
-     * Performs a POST request with JSON payload (using a POJO) and logs request and response details in the Extent report.
-     * @param endPoint The API endpoint for the request.
-     * @param requestPayloadAsPojo The JSON request payload as a POJO (Plain Old Java Object).
-     * @param headers The headers to be included in the request.
-     * @return The Response object for the POST request.
-     */
-    public static Response performJsonPost(String endPoint, Object requestPayloadAsPojo, Map<String,String>headers) {
-        RequestSpecification requestSpecification = GetRequestSpecification.jsonRequest(endPoint, requestPayloadAsPojo, headers);
-        Response response =  requestSpecification.post();
-        LogInReportUtil.printJsonRequest(requestSpecification);
-        LogInReportUtil.printJsonResponse(response);
-        return response;
-    }
+	
     
     /**
      * Performs a POST request with JSON payload and logs request and response details in the Extent report.
@@ -46,6 +33,15 @@ public class JsonRequestUtils {
      * @return The Response object for the POST request.
      */
     public static Response performJsonPost(String endPoint, Map<String, Object> requestPayload, Map<String,String>headers) {
+        RequestSpecification requestSpecification = GetRequestSpecification.jsonRequest(endPoint, requestPayload, headers);
+        Response response =  requestSpecification.post();
+        LogInReportUtil.printJsonRequest(requestSpecification);
+        LogInReportUtil.printJsonResponse(response);
+        return response;
+    }
+    
+
+    public static Response performJsonPost(String endPoint,  Object requestPayload, Map<String,String>headers) {
         RequestSpecification requestSpecification = GetRequestSpecification.jsonRequest(endPoint, requestPayload, headers);
         Response response =  requestSpecification.post();
         LogInReportUtil.printJsonRequest(requestSpecification);
@@ -158,6 +154,14 @@ public class JsonRequestUtils {
 	 * @return                The response object containing the result of the PATCH request.
 	 */
 	public static Response performJsonPatch(String endPoint, Map<String, Object> requestPayload, String pathParam, Object pathParamValue, String accessToken) {
+		RequestSpecification requestSpecification =GetRequestSpecification.jsonRequestWithOauth2(requestPayload,pathParam,pathParamValue,accessToken);
+    	Response response =  requestSpecification.when().patch(endPoint);
+    	LogInReportUtil.printJsonRequest(requestSpecification);
+    	LogInReportUtil.printJsonResponse(response);
+    	return response;
+	}    
+	
+	public static Response performJsonPatch(String endPoint, Object requestPayload, String pathParam, Object pathParamValue, String accessToken) {
 		RequestSpecification requestSpecification =GetRequestSpecification.jsonRequestWithOauth2(requestPayload,pathParam,pathParamValue,accessToken);
     	Response response =  requestSpecification.when().patch(endPoint);
     	LogInReportUtil.printJsonRequest(requestSpecification);

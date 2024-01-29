@@ -141,13 +141,13 @@ public class DataProviders {
                 urlMap.put(requestSummary, endpoint);
             }
         }
-
+       
         // Return the endpoint corresponding to the given request name
         return urlMap.get(reqName);
     }
     
     public static Map<String,JSONObject> getRequestBody() throws FileNotFoundException, IOException, ParseException{
-    	JSONParser parser = new JSONParser();
+     JSONParser parser = new JSONParser();
    	 JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("C:\\Users\\DELL\\Downloads\\jobify.json"));
 
    	// System.out.println(jsonObject.toJSONString());
@@ -179,10 +179,6 @@ public class DataProviders {
                 
             }
             
-        }
-        // Print each entry in the request reqBody map
-        for (Map.Entry entry : requestBodyMap.entrySet()) {
-            System.out.println("key: " + entry.getKey() + "; value: " + entry.getValue());
         }
         return requestBodyMap;
     }
