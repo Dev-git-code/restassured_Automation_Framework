@@ -5,14 +5,7 @@
     <classes>
       <class name="api.test.JobifyTests">
         <methods>
-          <include name="testGetSingleJob"/>
-          <include name="testLoginUser" invocation-numbers="0"/>
-          <include name="testgetAllJobs" invocation-numbers="0"/>
-          <include name="testCreateJob" invocation-numbers="0 1"/>
-          <include name="testDeleteJob"/>
-          <include name="testRegisterUser" invocation-numbers="0"/>
-          <include name="testDeleteUser" invocation-numbers="0"/>
-          <include name="testUpdateJob" invocation-numbers="0"/>
+          <include name="getRoutes"/>
         </methods>
       </class> <!-- api.test.JobifyTests -->
     </classes>

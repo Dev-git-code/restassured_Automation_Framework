@@ -35,7 +35,8 @@ import org.testng.annotations.Test;
 
 import reporting.Setup;
 import restUtils.AssertionUtils;
-import restUtils.RestUtils;
+import restUtils.JsonRequestUtils;
+import restUtils.LogInReportUtil;
 import reporting.ExtentReportManager;
 import api.utilities.*;
 
@@ -58,7 +59,7 @@ public class DDTests {
 		userPayload.setPassword(pwd);
 		userPayload.setPhone(ph);
 		
-		Response response = RestUtils.performJsonPost(Routes.post_url, userPayload, new HashMap<>());
+		Response response = JsonRequestUtils.performJsonPost(Routes.post_url, userPayload, new HashMap<>());
 		  //Response response = RestUtils.performXmlPost(Routes.post_url, userPayload, new HashMap<>());
 		
 		Map<String,String> expectedHeader = new HashMap<>(); 
@@ -119,7 +120,7 @@ public class DDTests {
 	        AssertionUtils.assertExpectedValuesWithJsonPath(response, expectedValueMap);
 	        //AssertionUtils.assertExpectedValuesWithXmlPath(response, expectedValueMap);
 	        AssertionUtils.AssertExpectedHeaders(response, expected);
-	        RestUtils.printJsonResponseLogInReport(response);
+	        LogInReportUtil.printJsonResponse(response);
 	        //RestUtils.printXmlResponseLogInReport(response);
 	        
 	        
@@ -145,7 +146,7 @@ public class DDTests {
 //		userPayload.setPassword(pwd);
 //		userPayload.setPhone(ph);
 		
-		Response response = RestUtils.performJsonPost(Routes.post_url, userPayload, new HashMap<>());
+		Response response = JsonRequestUtils.performJsonPost(Routes.post_url, userPayload, new HashMap<>());
 		  //Response response = RestUtils.performXmlPost(Routes.post_url, userPayload, new HashMap<>());
 		
 		Map<String,String> expectedHeader = new HashMap<>(); 
@@ -204,7 +205,7 @@ public class DDTests {
 	        AssertionUtils.assertExpectedValuesWithJsonPath(response, testData);
 	        //AssertionUtils.assertExpectedValuesWithXmlPath(response, expectedValueMap);
 	        AssertionUtils.AssertExpectedHeaders(response, expected);
-	        RestUtils.printJsonResponseLogInReport(response);
+	        LogInReportUtil.printJsonResponse(response);
 	        //RestUtils.printXmlResponseLogInReport(response);
 	        
 	        
@@ -216,7 +217,7 @@ public class DDTests {
 			//Response response=UserEndPoints.deleteXmlUser(userName);
 			Response response=UserEndPoints.deleteJsonUser(userName);
 			//RestUtils.printXmlResponseLogInReport(response);
-			RestUtils.printJsonResponseLogInReport(response);	
+			 LogInReportUtil.printJsonResponse(response);	
 			AssertionUtils.AssertThat(200, response.getStatusCode(), "correct status code");
 				
 	

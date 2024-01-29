@@ -25,7 +25,7 @@ public class JobifyRoutes {
 	
 	//Jobs
 	public static String createJobUrl = baseUrl + "/jobs";
-	public static String getALlJobsUrl = baseUrl + "/jobs";
+	public static String getAllJobsUrl = baseUrl + "/jobs";
 	public static String getSingleJobUrl = baseUrl + "/jobs/{id}";
 	public static String updateJobUrl = baseUrl + "/jobs/{id}";
 	public static String deleteJobUrl = baseUrl + "/jobs/{id}";
