@@ -1,68 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="7" total="9" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-29T16:52:07 IST" name="JobifySuite" finished-at="2024-01-29T16:52:20 IST" duration-ms="13147">
+  <suite started-at="2024-02-08T17:08:00 IST" name="JobifySuite" finished-at="2024-02-08T17:08:06 IST" duration-ms="6388">
     <groups>
     </groups>
-    <test started-at="2024-01-29T16:52:07 IST" name="JobifyTests" finished-at="2024-01-29T16:52:20 IST" duration-ms="13147">
+    <test started-at="2024-02-08T17:08:00 IST" name="JobifyTests" finished-at="2024-02-08T17:08:06 IST" duration-ms="6388">
       <class name="api.test.JobifyTests">
-        <test-method signature="testRegisterUser()[pri:1, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:07 IST" name="testRegisterUser" finished-at="2024-01-29T16:52:11 IST" duration-ms="4060" status="PASS">
+        <test-method signature="testRegisterUser(java.lang.reflect.Method,java.util.Map)[pri:1, instance:api.test.JobifyTests@485966cc]" started-at="2024-02-08T17:08:01 IST" name="testRegisterUser" data-provider="getData" finished-at="2024-02-08T17:08:05 IST" duration-ms="4043" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void api.test.JobifyTests.testRegisterUser(java.lang.reflect.Method,java.util.Map) throws java.io.FileNotFoundException,java.io.IOException,org.json.simple.parser.ParseException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{email=john@gmail.com, name=john, password=secret}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegisterUser -->
-        <test-method signature="testLoginUser()[pri:2, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:11 IST" name="testLoginUser" finished-at="2024-01-29T16:52:14 IST" duration-ms="2416" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLoginUser -->
-        <test-method signature="testCreateJob()[pri:3, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:14 IST" name="testCreateJob" finished-at="2024-01-29T16:52:14 IST" duration-ms="560" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreateJob -->
-        <test-method signature="testGetSingleJob()[pri:4, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:14 IST" name="testGetSingleJob" finished-at="2024-01-29T16:52:15 IST" duration-ms="1095" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetSingleJob -->
-        <test-method signature="testgetAllJobs(java.lang.reflect.Method,java.util.Map)[pri:5, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:16 IST" name="testgetAllJobs" data-provider="getData" finished-at="2024-01-29T16:52:17 IST" duration-ms="1139" status="PASS">
+        <test-method signature="testRegisterUser(java.lang.reflect.Method,java.util.Map)[pri:1, instance:api.test.JobifyTests@485966cc]" started-at="2024-02-08T17:08:05 IST" name="testRegisterUser" data-provider="getData" finished-at="2024-02-08T17:08:06 IST" duration-ms="1403" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void api.test.JobifyTests.testgetAllJobs(java.lang.reflect.Method,java.util.Map) throws java.io.FileNotFoundException,java.io.IOException,org.json.simple.parser.ParseException]]>
+                <![CDATA[public void api.test.JobifyTests.testRegisterUser(java.lang.reflect.Method,java.util.Map) throws java.io.FileNotFoundException,java.io.IOException,org.json.simple.parser.ParseException]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{jobs[0].status=pending, jobs[0].position=sde1, jobs[0].company=Accops}]]>
+                <![CDATA[{email=shrikant@accops.in, name=shrikant, password=accops}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testgetAllJobs -->
-        <test-method signature="testUpdateJob()[pri:6, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:17 IST" name="testUpdateJob" finished-at="2024-01-29T16:52:18 IST" duration-ms="490" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUpdateJob -->
-        <test-method signature="testDeleteJob()[pri:7, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:18 IST" name="testDeleteJob" finished-at="2024-01-29T16:52:19 IST" duration-ms="1155" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteJob -->
-        <test-method signature="testDeleteUser(java.lang.reflect.Method,java.util.Map)[pri:8, instance:api.test.JobifyTests@6392827e]" started-at="2024-01-29T16:52:19 IST" name="testDeleteUser" data-provider="getData" finished-at="2024-01-29T16:52:20 IST" duration-ms="1155" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void api.test.JobifyTests.testDeleteUser(java.lang.reflect.Method,java.util.Map) throws java.io.FileNotFoundException,java.io.IOException,org.json.simple.parser.ParseException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{email=john@gmail.com, name=testuser}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteUser -->
+        </test-method> <!-- testRegisterUser -->
       </class> <!-- api.test.JobifyTests -->
     </test> <!-- JobifyTests -->
   </suite> <!-- JobifySuite -->

@@ -8,7 +8,7 @@
     <classes>
       <class name="api.test.JobifyTests">
         <methods>
-          <include name="testgetAllJobs" invocation-numbers="0"/>
+          <include name="testRegisterUser" invocation-numbers="0"/>
         </methods>
       </class> <!-- api.test.JobifyTests -->
     </classes>

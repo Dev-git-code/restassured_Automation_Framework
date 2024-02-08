@@ -59,64 +59,68 @@ import api.utilities.*;
 
 public class JobifyTests {
 	
-
 	String token;
 	String id;
-	public static String baseUrl = "https://jobify-app-api-dev.onrender.com/api/v1";
-	
-	@Test(priority=1)
-	public void testRegisterUser() throws FileNotFoundException, IOException, ParseException {
-		Response response = JsonRequestUtils.performJsonPost(DataProviders.getRoutesFromSwaggerJson("Register User"), DataProviders.getRequestBody().get("Register User"), new HashMap<>());		
+
+	@Test(priority=1,dataProvider = "getData",dataProviderClass=DataProviders.class)
+	public void testRegisterUser(Method method,Map<String,Object> testData) throws FileNotFoundException, IOException, ParseException {
+		Response response = JsonRequestUtils.performJsonPost(DataProviders.getRoutes("Register User"),testData, new HashMap<>());
+		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,dataProvider = "getData",dataProviderClass=DataProviders.class)
 	
-	public void testLoginUser() throws FileNotFoundException, IOException, ParseException {	
-		Response response =JsonRequestUtils.performJsonPost(DataProviders.getRoutesFromSwaggerJson("Login User"), DataProviders.getRequestBody().get("Register User"), new HashMap<>());		
+	public void testLoginUser(Method method, Map<String,Object> testData) throws FileNotFoundException, IOException, ParseException {	
+		Response response =JsonRequestUtils.performJsonPost(DataProviders.getRoutes("Login User"),testData, new HashMap<>());		
 	    token = response.jsonPath().get("token");
 		System.out.println(token);
 	}
 	
 		
-	@Test(priority =3)
-	public void testCreateJob() throws FileNotFoundException, IOException, ParseException {
+	@Test(priority=3,dataProvider = "getData",dataProviderClass=DataProviders.class)
+	
+	public void testCreateJob(Method method,Map<String,Object> testData) throws FileNotFoundException, IOException, ParseException {
 		// get the access token from login user
-		Response response = JsonRequestUtils.performJsonPost(DataProviders.getRoutesFromSwaggerJson("Create Job"), DataProviders.getRequestBody().get("Create Job"),token);
+		Response response = JsonRequestUtils.performJsonPost(DataProviders.getRoutes("Create Job"), testData,token);
 		id = response.jsonPath().get("job._id");
 		System.out.println(id);	
 	}
 	
-	@Test(priority = 4)
+	@Test(priority=4)
 	
-	public void testGetSingleJob() throws FileNotFoundException, IOException, ParseException {
-		Response response = JsonRequestUtils.performJsonGet(DataProviders.getRoutesFromSwaggerJson("Get Single Job"),"id", id, token);
+	public void testGetSingleJob(Method method) throws FileNotFoundException, IOException, ParseException {
+		Response response = JsonRequestUtils.performJsonGet(DataProviders.getRoutes("Get Single Job"),"id", id, token);
+		AssertionUtils.assertExpectedValuesWithJsonPath(response, DataProviders.getAssertionData(method));
 	}
 	
-	@Test(priority =5, dataProvider="getData",dataProviderClass = DataProviders.class)
+	@Test(priority =5)
 	
-	public void testgetAllJobs(Method method,Map<String,Object> testData) throws FileNotFoundException, IOException, ParseException {
-		Response response = JsonRequestUtils.performJsonGet(DataProviders.getRoutesFromSwaggerJson("Get All Jobs"), token);
-		AssertionUtils.assertExpectedValuesWithJsonPath(response, testData );
+	public void testGetAllJobs(Method method) throws FileNotFoundException, IOException, ParseException {
+		Response response = JsonRequestUtils.performJsonGet(DataProviders.getRoutes("Get All Jobs"), token);
+		AssertionUtils.assertExpectedValuesWithJsonPath(response, DataProviders.getAssertionData(method));
 	}
 	
-	@Test(priority =6)
+	@Test(priority =6, dataProvider="getData",dataProviderClass = DataProviders.class)
 	
-	public void testUpdateJob() throws FileNotFoundException, IOException, ParseException {
-		Response response = JsonRequestUtils.performJsonPatch(DataProviders.getRoutesFromSwaggerJson("Update Job"),DataProviders.getRequestBody().get("Update Job"),"id", id,token);
+	public void testUpdateJob(Method method,Map<String,Object> testData) throws FileNotFoundException, IOException, ParseException {
+		Response response = JsonRequestUtils.performJsonPatch(DataProviders.getRoutes("Update Job"),testData,"id", id,token);
 	}
 	
 	@Test(priority = 7)
 	
 	public void testDeleteJob() throws FileNotFoundException, IOException, ParseException {
-		Response response = JsonRequestUtils.performJsonDelete(DataProviders.getRoutesFromSwaggerJson("Delete Job"),"id", id, token);
+		Response response = JsonRequestUtils.performJsonDelete(DataProviders.getRoutes("Delete Job"),"id", id, token);
 	}
 	
-	@Test(priority=8, dataProvider= "getData",dataProviderClass = DataProviders.class)
+	@Test(priority=8)
 	
-	public void testDeleteUser(Method method,Map<String,Object> testData) throws FileNotFoundException, IOException, ParseException {
+	public void testDeleteUser(Method method) throws FileNotFoundException, IOException, ParseException {
 		
-		Response response = JsonRequestUtils.performJsonDelete(DataProviders.getRoutesFromSwaggerJson("Delete User"),"email",testData.get("email"));		
+		Response response = JsonRequestUtils.performJsonDelete(DataProviders.getRoutes("Delete User"),"email",
+															   DataProviders.getParameterValue("Delete User").get("The user email"));
+		AssertionUtils.assertExpectedValuesWithJsonPath(response, DataProviders.getAssertionData(method));
 	}
+	
 	
 
 	

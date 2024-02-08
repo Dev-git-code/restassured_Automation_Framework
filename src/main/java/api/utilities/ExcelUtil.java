@@ -31,7 +31,7 @@ public class ExcelUtil {
 			 * PathUtil.getConfDirPath() + File.separator + "HYS_TestData.xlsx"; } else {
 			 */
 			//path = TestProperties.get("excel.file.path");
-			path=System.getProperty("user.dir")+"//testData//HyWorksData.xlsx";
+			path=System.getProperty("user.dir")+"//testData//practice.xlsx";
 			// path = PathUtil.getConfDirPath() + File.separator + "HYS_TestData.xlsx";
 			// }
 			fis = new FileInputStream(path);
