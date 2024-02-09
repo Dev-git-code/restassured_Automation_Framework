@@ -8,6 +8,8 @@ import api.utilities.WriteDataToExcel;
  */
 public class CreateExcelFromSwagger {
 	public static void main(String[] args) throws Exception {
-		WriteDataToExcel.writeToExcel();
+		String jsonFilePath = System.getProperty("user.dir")+"//testData//jobify.json";
+		String excelFilePath = System.getProperty("user.dir")+"//testData//practice.xlsx";
+		WriteDataToExcel.writeToExcel(jsonFilePath,excelFilePath);
 	}
 }

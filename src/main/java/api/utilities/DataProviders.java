@@ -159,12 +159,12 @@ public class DataProviders {
      * @param req The request name for which parameter values are requested.
      * @return A Map containing parameter names and their corresponding values.
      */
-    public static Map<String, String> getParameterValue(String req) {
+    public static Map<String, String> getParameterValue(Method method) {
         // Create an instance of ExcelUtil to access Excel data
         ExcelUtil excel = new ExcelUtil();
 
         // Get the test data for the given request from the Excel sheet
-        Object[][] data = excel.getTestData(req + " Parameter", "User Data");
+        Object[][] data = excel.getTestData(method.getName() + "Parameter", "User Data");
 
         // Initialize a Map to store parameter values
         Map<String, String> paramMap = new HashMap<>();
@@ -192,7 +192,7 @@ public class DataProviders {
      * @throws IOException           If an I/O error occurs while reading the Swagger JSON file.
      * @throws ParseException        If an error occurs during JSON parsing.
      */
-    public static Map<String,String> getRoutesFromSwaggerJson() throws FileNotFoundException, IOException, ParseException {
+    public static Map<String,String> getRoutesFromSwaggerJson(String jsonPath) throws FileNotFoundException, IOException, ParseException {
         // Create a JSON parser object
         JSONParser parser = new JSONParser();
 
@@ -240,12 +240,12 @@ public class DataProviders {
      * @throws IOException           If an I/O exception occurs while reading the Swagger JSON file.
      * @throws ParseException        If an error occurs during the parsing of the Swagger JSON.
      */
-    public static Map<String, JSONObject> getRequestBody() throws FileNotFoundException, IOException, ParseException {
+    public static Map<String, JSONObject> getRequestBody(String jsonPath) throws FileNotFoundException, IOException, ParseException {
         // Create a JSONParser to parse the Swagger JSON file
         JSONParser parser = new JSONParser();
 
         // Read the Swagger JSON file and parse it into a JSONObject
-        JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("C:\\Users\\DELL\\3D Objects\\automation framework\\RestAssuredAutomation\\testData\\jobify.json"));
+        JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(jsonPath));
 
         // Extract the "paths" object from the Swagger JSON
         JSONObject pathsObject = (JSONObject) jsonObject.get("paths");
@@ -305,12 +305,12 @@ public class DataProviders {
      * @throws IOException           If there is an issue reading the JSON file.
      * @throws ParseException        If there is an issue parsing the JSON file.
      */
-    public static Map<String, JSONObject> getParamMap() throws FileNotFoundException, IOException, ParseException {
+    public static Map<String, JSONObject> getParamMap(String jsonPath) throws FileNotFoundException, IOException, ParseException {
         // Initialize JSON parser
         JSONParser parser = new JSONParser();
 
         // Read and parse Swagger JSON file
-        JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("C:\\Users\\DELL\\3D Objects\\automation framework\\RestAssuredAutomation\\testData\\jobify.json"));
+        JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(jsonPath));
 
         // Extract the 'paths' object from Swagger JSON
         JSONObject pathsObject = (JSONObject) jsonObject.get("paths");

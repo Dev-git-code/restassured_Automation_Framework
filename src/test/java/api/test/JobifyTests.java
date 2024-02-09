@@ -117,7 +117,7 @@ public class JobifyTests {
 	public void testDeleteUser(Method method) throws FileNotFoundException, IOException, ParseException {
 		
 		Response response = JsonRequestUtils.performJsonDelete(DataProviders.getRoutes("Delete User"),"email",
-															   DataProviders.getParameterValue("Delete User").get("The user email"));
+															   DataProviders.getParameterValue(method).get("The user email"));
 		AssertionUtils.assertExpectedValuesWithJsonPath(response, DataProviders.getAssertionData(method));
 	}
 	

@@ -2,6 +2,7 @@ package api.utilities;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.*;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -14,149 +15,161 @@ import org.json.simple.JSONObject;
  * A utility class to write data to an Excel sheet.
  */
 public class WriteDataToExcel {
+	
+    // Create a new workbook
+    static XSSFWorkbook workbook = new XSSFWorkbook();
 
+    // Create a new spreadsheet within the workbook
+    static XSSFSheet spreadsheet = workbook.createSheet("User Data");
+
+    // Create a row object to represent a row in the spreadsheet
+    static XSSFRow row;
+    
+	// Initialize row index
+    static Integer j = 1;
+    
+    // Create a map to store the data to be written to the spreadsheet
+    static Map<Integer, Object[]> excelData = new TreeMap<Integer, Object[]>();
+    
     /**
-     * Writes data to an Excel sheet.
-     * 
-     * @throws Exception if any error occurs during writing
+     * Write JSON data to the Excel sheet.
+     *
+     * @param jsonMap A map containing JSON data.
      */
-    public static void writeToExcel() throws Exception {
-        // Create a new workbook
-        XSSFWorkbook workbook = new XSSFWorkbook();
+	private static void writeJsonDataToExcel(Map<String,JSONObject> jsonMap) {
+		 // Add jsonMap data to the excelData map
+        for (Map.Entry<String, JSONObject> entry : jsonMap.entrySet()) {
+            String reqKey = entry.getKey();
+            Object[] reqKeyObject = new Object[1];
+            String testKey = "test" + reqKey.replace(" ", "");
+            reqKeyObject[0] = testKey;
+            JSONObject jsonBody = entry.getValue();
+            int n = jsonBody.size();
+            Object[] keyObject = new Object[n];
+            Object[] valueObject = new Object[n];
+            int i = 0;
+            for (Iterator<?> bodyIterator = jsonBody.keySet().iterator(); bodyIterator.hasNext();) {
+                String key = (String) bodyIterator.next();
+                keyObject[i] = key;
+                String value = (String) jsonBody.get(key);
+                valueObject[i] = value;
+                i++;
+            }
 
-        // Create a new spreadsheet within the workbook
-        XSSFSheet spreadsheet = workbook.createSheet("User Data");
+            excelData.put(j++, reqKeyObject);
+            excelData.put(j++, keyObject);
+            excelData.put(j++, valueObject);
+            excelData.put(j++, new Object[] { "" });
+            excelData.put(j++, new Object[] { "" });
+        }
 
-        // Create a row object to represent a row in the spreadsheet
-        XSSFRow row;
-
-        // Create a map to store the data to be written to the spreadsheet
-        Map<Integer, Object[]> userData = new TreeMap<Integer, Object[]>();
-
-        // Get data from data providers
-        Map<String, JSONObject> requestBodyMap = DataProviders.getRequestBody();
-        Map<String, String> routesMap = DataProviders.getRoutesFromSwaggerJson();
-        Map<String, JSONObject> paramMap = DataProviders.getParamMap();
-
-        // Initialize row index
-        Integer j = 1;
-
-        // Add headers and routes data to the userData map
-        userData.put(j++, new Object[] { "" });
-        userData.put(j++, new Object[] { "" });
-        userData.put(j++, new Object[] { "Routes" });
-        userData.put(j++, new Object[] { "RouteName", "URL" });
-        for (Map.Entry<String, String> entry : routesMap.entrySet()) {
+	}
+	
+	/**
+     * Write a map to the Excel sheet.
+     *
+     * @param map A map containing data to be written to the Excel sheet.
+     */
+	private static void writeMapToExcel(Map<String,String> map) {
+		// Add map data to the excelData map
+        excelData.put(j++, new Object[] { "" });
+        excelData.put(j++, new Object[] { "" });
+        excelData.put(j++, new Object[] { "Routes" });
+        excelData.put(j++, new Object[] { "RouteName", "URL" });
+        for (Map.Entry<String, String> entry : map.entrySet()) {
             String routeKey = entry.getKey();
             String routeBody = entry.getValue();
-            userData.put(j++, new Object[] { routeKey, routeBody });
+            excelData.put(j++, new Object[] { routeKey, routeBody });
         }
-        userData.put(j++, new Object[] { "" });
-        userData.put(j++, new Object[] { "" });
-
-        // Add parameters data to the userData map
-        for (Map.Entry<String, JSONObject> entry : paramMap.entrySet()) {
-            String reqKey = entry.getKey();
-            Object[] reqKeyObject = new Object[1];
-            String testKey = "test" + reqKey.replace(" ", "");
-            reqKeyObject[0] = testKey;
-            JSONObject reqBody = entry.getValue();
-            int n = reqBody.size();
-            Object[] keyObject = new Object[n];
-            Object[] valueObject = new Object[n];
-            int i = 0;
-            for (Iterator<?> bodyIterator = reqBody.keySet().iterator(); bodyIterator.hasNext();) {
-                String key = (String) bodyIterator.next();
-                keyObject[i] = key;
-                String value = (String) reqBody.get(key);
-                valueObject[i] = value;
-                i++;
-            }
-
-            userData.put(j++, reqKeyObject);
-            userData.put(j++, keyObject);
-            userData.put(j++, valueObject);
-            userData.put(j++, new Object[] { "" });
-            userData.put(j++, new Object[] { "" });
-        }
-
-        // Add request body data to the userData map
-        for (Map.Entry<String, JSONObject> entry : requestBodyMap.entrySet()) {
-            String reqKey = entry.getKey();
-            Object[] reqKeyObject = new Object[1];
-            String testKey = "test" + reqKey.replace(" ", "");
-            reqKeyObject[0] = testKey;
-            JSONObject reqBody = entry.getValue();
-            int n = reqBody.size();
-            Object[] keyObject = new Object[n];
-            Object[] valueObject = new Object[n];
-            int i = 0;
-            for (Iterator<?> bodyIterator = reqBody.keySet().iterator(); bodyIterator.hasNext();) {
-                String key = (String) bodyIterator.next();
-                keyObject[i] = key;
-                String value = (String) reqBody.get(key);
-                valueObject[i] = value;
-                i++;
-            }
-
-            userData.put(j++, reqKeyObject);
-            userData.put(j++, keyObject);
-            userData.put(j++, valueObject);
-            userData.put(j++, new Object[] { "" });
-            userData.put(j++, new Object[] { "" });
-        }
-
-        // Get the keys of the userData map
-        Set<Integer> keyid = userData.keySet();
+        excelData.put(j++, new Object[] { "" });
+        excelData.put(j++, new Object[] { "" });
+	}
+	
+	/**
+     * Write data to the Excel sheet.
+     */
+	private static void writeDataToSheet() {
+		 // Get the keys of the excelData map
+        Set<Integer> keyid = excelData.keySet();
 
         // Create cell styles for headers
-        CellStyle headerCellStyle = spreadsheet.getWorkbook().createCellStyle();
-        headerCellStyle.setFillForegroundColor(IndexedColors.YELLOW.index);
-        headerCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        CellStyle columnNameCellStyle = spreadsheet.getWorkbook().createCellStyle();
+        columnNameCellStyle.setFillForegroundColor(IndexedColors.YELLOW.index);
+        columnNameCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
-        CellStyle headerCellStyle2 = spreadsheet.getWorkbook().createCellStyle();
-        headerCellStyle2.setFillForegroundColor(IndexedColors.LIGHT_GREEN.index);
-        headerCellStyle2.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        CellStyle methodNameCellStyle = spreadsheet.getWorkbook().createCellStyle();
+        methodNameCellStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.index);
+        methodNameCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
         // Initialize row index
         int rowid = 0;
-        int cnt = 0;
+        int emptyRowCount = 0;
         // Write data to the spreadsheet
+        
         for (Integer key : keyid) {
             row = spreadsheet.createRow(rowid++);
-            Object[] objectArr = userData.get(key);
+            Object[] objectArr = excelData.get(key);
             int cellid = 0;
             int headingId = -1;
             int nameId = -1;
             
             for (Object obj : objectArr) {
                 Cell cell = row.createCell(cellid++);
-                if (cnt == 3) {
+                if (emptyRowCount == 3) {
                     headingId = rowid;
-                    cnt = 0;
+                    emptyRowCount = 0;
                 }
-                if (cnt == 2) {
+                if (emptyRowCount == 2) {
                     nameId = rowid;
-                    cnt++;
+                    emptyRowCount++;
                 }
 
                 if (obj.toString().isEmpty()) {
-                    cnt++;
+                    emptyRowCount++;
                 }
                 if (rowid == headingId)
-                    cell.setCellStyle(headerCellStyle);
+                    cell.setCellStyle(columnNameCellStyle);
                 if (rowid == nameId)
-                    cell.setCellStyle(headerCellStyle2);
+                    cell.setCellStyle(methodNameCellStyle);
                 cell.setCellValue((String) obj);
             }
         }
-
-        // Write the workbook to a file
-        FileOutputStream out = new FileOutputStream(new File(
-        		"C:\\Users\\DELL\\3D Objects\\automation framework\\RestAssuredAutomation\\testData\\practice.xlsx"));
-        //"C:\\Users\\DELL\\3D Objects\\automation framework\\RestAssuredAutomation\\testData\\practice.xlsx"
-        //"C:\\Users\\DELL\\Documents\\practice\\practice.xlsx"
+	}
+	
+	/**
+     * Write the workbook to a file.
+     *
+     * @param excelPath The path where the Excel file will be saved.
+     * @throws IOException If an I/O error occurs while writing the file.
+     */
+	private static void writeWorkbookToFile(String excelPath) throws IOException {
+		// Write the workbook to a file
+        FileOutputStream out = new FileOutputStream(new File(excelPath));
         workbook.write(out);
         out.close();
+	}
+
+	/**
+     * Write data to an Excel file.
+     *
+     * @param jsonFilePath The path to the JSON file containing data.
+     * @param excelPath    The path where the Excel file will be saved.
+     * @throws Exception If an error occurs during the writing process.
+     */
+    public static void writeToExcel(String jsonFilePath,String excelPath) throws Exception {
+    
+        // Get data from data providers
+        Map<String, JSONObject> requestBodyMap = DataProviders.getRequestBody(jsonFilePath);
+        Map<String, String> routesMap = DataProviders.getRoutesFromSwaggerJson(jsonFilePath);
+        Map<String, JSONObject> paramMap = DataProviders.getParamMap(jsonFilePath);
+
+      
+        writeMapToExcel(routesMap);
+        writeJsonDataToExcel(paramMap);
+        writeJsonDataToExcel(requestBodyMap);
+        
+        // insert data into excel
+        writeDataToSheet();
+        writeWorkbookToFile(excelPath);  
     }
 }

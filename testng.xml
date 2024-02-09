@@ -11,10 +11,6 @@
       <!-- <class name="api.test.UserTests"/> -->
        <!--<class name="api.test.UserTests2"/> -->
      <class name="api.test.JobifyTests">
-     
-     <methods>
-	<include name="testRegisterUser" />
-	</methods>
 	</class>
     </classes>
   </test> <!-- PetTests -->
