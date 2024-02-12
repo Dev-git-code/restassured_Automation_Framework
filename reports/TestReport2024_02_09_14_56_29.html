@@ -1,0 +1,1109 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Test ExecutionReport</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Test API Automation Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Feb 9, 2024 02:56:29 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testRegisterUser</p>
+            <p class="text-sm">
+              <span>2:56:30 pm</span> / <span>00:00:03:230</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test Name api.test.JobifyTests - testRegisterUser</h5>
+<span class='badge badge-success'>02.09.2024 2:56:30 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:33 pm</span>
+<span class='badge badge-default'>00:00:03:230</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <span class='badge white-text grey'>Endpoint is https://jobify-app-api-dev.onrender.com/api/v1/auth/register</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <span class='badge white-text grey'>Method is POST</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <span class='badge white-text grey'>Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Accept</td><td>application/json, application/javascript, text/javascript, text/json</td></tr><tr><td>Content-Type</td><td>application/json</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <span class='badge white-text grey'>Request body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-0'></div>
+ <script>
+  function jsonTreeCreate0() { 
+   document.getElementById('code-block-json-0').innerHTML = JSONTree.create({"email":"john@gmail.com","name":"john","password":"secret"}); 
+  }
+  jsonTreeCreate0();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 400</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:32 GMT</td></tr><tr><td>Content-Type</td><td>application/json; charset=utf-8</td></tr><tr><td>Content-Length</td><td>88</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b12408b5ef456-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>ETag</td><td>W/"47-UnOthD3GZSDjScitCNK33c9x9M4"</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>1eeef085-558e-43a1</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>96</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:33 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-1'></div>
+ <script>
+  function jsonTreeCreate1() { 
+   document.getElementById('code-block-json-1').innerHTML = JSONTree.create({
+    "msg": "Duplicate value entered for email, Please provide valid value"
+}); 
+  }
+  jsonTreeCreate1();
+ </script>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testLoginUser</p>
+            <p class="text-sm">
+              <span>2:56:33 pm</span> / <span>00:00:01:161</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test Name api.test.JobifyTests - testLoginUser</h5>
+<span class='badge badge-success'>02.09.2024 2:56:33 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:34 pm</span>
+<span class='badge badge-default'>00:00:01:161</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text grey'>Endpoint is https://jobify-app-api-dev.onrender.com/api/v1/auth/login</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text grey'>Method is POST</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text grey'>Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Accept</td><td>application/json, application/javascript, text/javascript, text/json</td></tr><tr><td>Content-Type</td><td>application/json</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text grey'>Request body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-2'></div>
+ <script>
+  function jsonTreeCreate2() { 
+   document.getElementById('code-block-json-2').innerHTML = JSONTree.create({"email":"john@gmail.com","name":"john","password":"secret"}); 
+  }
+  jsonTreeCreate2();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 200</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:34 GMT</td></tr><tr><td>Content-Type</td><td>application/json; charset=utf-8</td></tr><tr><td>Content-Length</td><td>227</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b124978942e31-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>ETag</td><td>W/"e6-0Gb7jNpNDfaaLeBSAUNNbntz5UI"</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>84f51332-70b3-4c1a</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>97</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-3'></div>
+ <script>
+  function jsonTreeCreate3() { 
+   document.getElementById('code-block-json-3').innerHTML = JSONTree.create({
+    "user": {
+        "name": "john"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWM0YmQxYjFlNjc3YTAwMzQ2N2Y2MTAiLCJuYW1lIjoiam9obiIsImlhdCI6MTcwNzQ3MDc5MywiZXhwIjoxNzEwMDYyNzkzfQ.uB6TrpKCc3VCEoxrN-kYyVg57-lDI75C9xOImXAQjfc"
+}); 
+  }
+  jsonTreeCreate3();
+ </script>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testCreateJob</p>
+            <p class="text-sm">
+              <span>2:56:35 pm</span> / <span>00:00:01:026</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test Name api.test.JobifyTests - testCreateJob</h5>
+<span class='badge badge-success'>02.09.2024 2:56:35 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:36 pm</span>
+<span class='badge badge-default'>00:00:01:026</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <span class='badge white-text grey'>Endpoint is http://localhost</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <span class='badge white-text grey'>Method is POST</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <span class='badge white-text grey'>Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Accept</td><td>application/json, application/javascript, text/javascript, text/json</td></tr><tr><td>Content-Type</td><td>application/json</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <span class='badge white-text grey'>Request body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-4'></div>
+ <script>
+  function jsonTreeCreate4() { 
+   document.getElementById('code-block-json-4').innerHTML = JSONTree.create({"position":"sde1","status":"pending","company":"Accops"}); 
+  }
+  jsonTreeCreate4();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 201</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:35 GMT</td></tr><tr><td>Content-Type</td><td>application/json; charset=utf-8</td></tr><tr><td>Content-Length</td><td>176</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b1257fceff30b-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>ETag</td><td>W/"df-zzOzgeqkBuV5T3Ei0IwWrsVDgss"</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>57c938b5-2673-4349</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>95</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:36 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-5'></div>
+ <script>
+  function jsonTreeCreate5() { 
+   document.getElementById('code-block-json-5').innerHTML = JSONTree.create({
+    "job": {
+        "status": "pending",
+        "_id": "65c5efcbdb40160034ae8b42",
+        "position": "sde1",
+        "company": "Accops",
+        "createdBy": "65c4bd1b1e677a003467f610",
+        "createdAt": "2024-02-09T09:26:35.678Z",
+        "updatedAt": "2024-02-09T09:26:35.678Z",
+        "__v": 0
+    }
+}); 
+  }
+  jsonTreeCreate5();
+ </script>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testGetSingleJob</p>
+            <p class="text-sm">
+              <span>2:56:36 pm</span> / <span>00:00:00:711</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test Name api.test.JobifyTests - testGetSingleJob</h5>
+<span class='badge badge-success'>02.09.2024 2:56:36 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:37 pm</span>
+<span class='badge badge-default'>00:00:00:711</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:37 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 200</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:37 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:37 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:36 GMT</td></tr><tr><td>Content-Type</td><td>application/json; charset=utf-8</td></tr><tr><td>Content-Length</td><td>176</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b125c4cf985ba-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>ETag</td><td>W/"df-zzOzgeqkBuV5T3Ei0IwWrsVDgss"</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>b4d93e52-213b-4fdd</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>97</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:37 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:37 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-6'></div>
+ <script>
+  function jsonTreeCreate6() { 
+   document.getElementById('code-block-json-6').innerHTML = JSONTree.create({
+    "job": {
+        "status": "pending",
+        "_id": "65c5efcbdb40160034ae8b42",
+        "position": "sde1",
+        "company": "Accops",
+        "createdBy": "65c4bd1b1e677a003467f610",
+        "createdAt": "2024-02-09T09:26:35.678Z",
+        "updatedAt": "2024-02-09T09:26:35.678Z",
+        "__v": 0
+    }
+}); 
+  }
+  jsonTreeCreate6();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:37 pm</td>
+        <td>
+          <span class='badge white-text green'>All assertions are passed. 😊😊😊😊😊</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:37 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>JSON_PATH</td><td>EXPECTED_VALUE</td><td>ACTUAL_VALUE</td><td>RESULT</td></tr><tr><td>job.status </td><td>pending</td><td>pending</td><td>MATCHED ✅</td></tr><tr><td>job.company</td><td>Accops</td><td>Accops</td><td>MATCHED ✅</td></tr><tr><td>job.position</td><td>sde1</td><td>sde1</td><td>MATCHED ✅</td></tr></table>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testGetAllJobs</p>
+            <p class="text-sm">
+              <span>2:56:37 pm</span> / <span>00:00:00:677</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test Name api.test.JobifyTests - testGetAllJobs</h5>
+<span class='badge badge-success'>02.09.2024 2:56:37 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:38 pm</span>
+<span class='badge badge-default'>00:00:00:677</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:38 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 200</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:38 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:38 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:37 GMT</td></tr><tr><td>Content-Type</td><td>application/json; charset=utf-8</td></tr><tr><td>Content-Length</td><td>186</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b12606c203218-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>ETag</td><td>W/"ec-yUd7oZ/dg5stKPo04OmD1YPOpHw"</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>bf8256b1-b2fc-4fd7</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>96</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:38 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:38 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-7'></div>
+ <script>
+  function jsonTreeCreate7() { 
+   document.getElementById('code-block-json-7').innerHTML = JSONTree.create({
+    "jobs": [
+        {
+            "status": "pending",
+            "_id": "65c5efcbdb40160034ae8b42",
+            "position": "sde1",
+            "company": "Accops",
+            "createdBy": "65c4bd1b1e677a003467f610",
+            "createdAt": "2024-02-09T09:26:35.678Z",
+            "updatedAt": "2024-02-09T09:26:35.678Z",
+            "__v": 0
+        }
+    ],
+    "count": 1
+}); 
+  }
+  jsonTreeCreate7();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:56:38 pm</td>
+        <td>
+          <span class='badge white-text red'>All assertions are not passed. 😒😒😒😒😒</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:38 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>JSON_PATH</td><td>EXPECTED_VALUE</td><td>ACTUAL_VALUE</td><td>RESULT</td></tr><tr><td>job[0].status</td><td>pending</td><td>VALUE_NOT_FOUND</td><td>NOT_MATCHED ❌</td></tr><tr><td>job[0].company</td><td>Accops</td><td>VALUE_NOT_FOUND</td><td>NOT_MATCHED ❌</td></tr><tr><td>job[0].position</td><td>sde1</td><td>VALUE_NOT_FOUND</td><td>NOT_MATCHED ❌</td></tr></table>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testUpdateJob</p>
+            <p class="text-sm">
+              <span>2:56:38 pm</span> / <span>00:00:01:305</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test Name api.test.JobifyTests - testUpdateJob</h5>
+<span class='badge badge-success'>02.09.2024 2:56:38 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:39 pm</span>
+<span class='badge badge-default'>00:00:01:305</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <span class='badge white-text grey'>Endpoint is http://localhost</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <span class='badge white-text grey'>Method is PATCH</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <span class='badge white-text grey'>Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Accept</td><td>application/json, application/javascript, text/javascript, text/json</td></tr><tr><td>Content-Type</td><td>application/json</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <span class='badge white-text grey'>Request body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-8'></div>
+ <script>
+  function jsonTreeCreate8() { 
+   document.getElementById('code-block-json-8').innerHTML = JSONTree.create({"position":"full stack developer","status":"declined","company":"Genesis"}); 
+  }
+  jsonTreeCreate8();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 200</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:38 GMT</td></tr><tr><td>Content-Type</td><td>application/json; charset=utf-8</td></tr><tr><td>Content-Length</td><td>197</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b12691bf98589-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>ETag</td><td>W/"f1-7pJVA7t8ffMT2HEdREJTB0sCH0Y"</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>be1021f3-bed4-4b0a</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>95</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:39 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-9'></div>
+ <script>
+  function jsonTreeCreate9() { 
+   document.getElementById('code-block-json-9').innerHTML = JSONTree.create({
+    "job": {
+        "status": "declined",
+        "_id": "65c5efcbdb40160034ae8b42",
+        "position": "full stack developer",
+        "company": "Genesis",
+        "createdBy": "65c4bd1b1e677a003467f610",
+        "createdAt": "2024-02-09T09:26:35.678Z",
+        "updatedAt": "2024-02-09T09:26:38.409Z",
+        "__v": 0
+    }
+}); 
+  }
+  jsonTreeCreate9();
+ </script>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testDeleteJob</p>
+            <p class="text-sm">
+              <span>2:56:39 pm</span> / <span>00:00:00:575</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test Name api.test.JobifyTests - testDeleteJob</h5>
+<span class='badge badge-success'>02.09.2024 2:56:39 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:40 pm</span>
+<span class='badge badge-default'>00:00:00:575</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 200</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:39 GMT</td></tr><tr><td>Content-Length</td><td>0</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b126d2bdf85eb-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>10c12509-c8fc-4eea</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>96</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-10'></div>
+ <script>
+  function jsonTreeCreate10() { 
+   document.getElementById('code-block-json-10').innerHTML = JSONTree.create(); 
+  }
+  jsonTreeCreate10();
+ </script>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test Name api.test.JobifyTests - testDeleteUser</p>
+            <p class="text-sm">
+              <span>2:56:40 pm</span> / <span>00:00:00:662</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test Name api.test.JobifyTests - testDeleteUser</h5>
+<span class='badge badge-success'>02.09.2024 2:56:40 pm</span>
+<span class='badge badge-danger'>02.09.2024 2:56:40 pm</span>
+<span class='badge badge-default'>00:00:00:662</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response status is 200</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response Headers are </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>Date</td><td>Fri, 09 Feb 2024 09:26:39 GMT</td></tr><tr><td>Content-Type</td><td>application/json; charset=utf-8</td></tr><tr><td>Content-Length</td><td>57</td></tr><tr><td>Connection</td><td>keep-alive</td></tr><tr><td>CF-Ray</td><td>852b1270ac872e7d-BOM</td></tr><tr><td>CF-Cache-Status</td><td>DYNAMIC</td></tr><tr><td>Access-Control-Allow-Origin</td><td>*</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>ETag</td><td>W/"28-eKjXOz3niSKeR7ZTDry3Ze0Oleo"</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=15552000; includeSubDomains</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>content-security-policy</td><td>default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</td></tr><tr><td>expect-ct</td><td>max-age=0</td></tr><tr><td>referrer-policy</td><td>no-referrer</td></tr><tr><td>rndr-id</td><td>38f9b82a-0425-40c8</td></tr><tr><td>x-content-type-options</td><td>nosniff</td></tr><tr><td>x-dns-prefetch-control</td><td>off</td></tr><tr><td>x-download-options</td><td>noopen</td></tr><tr><td>x-frame-options</td><td>SAMEORIGIN</td></tr><tr><td>x-permitted-cross-domain-policies</td><td>none</td></tr><tr><td>x-ratelimit-limit</td><td>100</td></tr><tr><td>x-ratelimit-remaining</td><td>94</td></tr><tr><td>x-ratelimit-reset</td><td>1707470911</td></tr><tr><td>x-render-origin-server</td><td>Render</td></tr><tr><td>x-xss-protection</td><td>0</td></tr><tr><td>Server</td><td>cloudflare</td></tr><tr><td>alt-svc</td><td>h3=":443"; ma=86400</td></tr></table>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <span class='badge white-text grey'>Response body is </span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+           <div class='json-tree' id='code-block-json-11'></div>
+ <script>
+  function jsonTreeCreate11() { 
+   document.getElementById('code-block-json-11').innerHTML = JSONTree.create({
+    "name": "john",
+    "email": "john@gmail.com"
+}); 
+  }
+  jsonTreeCreate11();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <span class='badge white-text green'>All assertions are passed. 😊😊😊😊😊</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          <table class='markup-table table '><tr><td>JSON_PATH</td><td>EXPECTED_VALUE</td><td>ACTUAL_VALUE</td><td>RESULT</td></tr><tr><td>name</td><td>john</td><td>john</td><td>MATCHED ✅</td></tr><tr><td>email</td><td>john@gmail.com</td><td>john@gmail.com</td><td>MATCHED ✅</td></tr></table>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Feb 9, 2024 02:56:29 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Feb 9, 2024 02:56:40 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>7</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='87%'>
+<b>7</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='12%'><b>1</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='2%'><b>2</b> events passed</small></div>
+<div>
+<small data-tooltip='1%'><b>1</b> events failed,
+<b data-tooltip='%'>67</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Test Name api.test.JobifyTests - testRegisterUser":3.23,"Test Name api.test.JobifyTests - testLoginUser":1.161,"Test Name api.test.JobifyTests - testCreateJob":1.026,"Test Name api.test.JobifyTests - testGetSingleJob":0.711,"Test Name api.test.JobifyTests - testGetAllJobs":0.677,"Test Name api.test.JobifyTests - testUpdateJob":1.305,"Test Name api.test.JobifyTests - testDeleteJob":0.575,"Test Name api.test.JobifyTests - testDeleteUser":0.662
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 7,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 2,
+failEvents: 1,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 67
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
